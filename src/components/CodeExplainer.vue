@@ -1,9 +1,11 @@
 <template>
   <div class="code-explainer">
-    <header>
+    <div>
+    <header class="header-container">
       <img src="/parsley-svgrepo-com.svg" alt="Logo" class="logo" />
       <h1>Parsley Codesplainer</h1>
     </header>
+    </div>
     <div class="code-input">
       <label for="code-snippet">Paste your code snippet:</label>
       <textarea maxlength="10000" id="code-snippet" v-model="codeSnippet"></textarea>
@@ -106,6 +108,16 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.logo {
+  margin-right: 1rem;
 }
 
 .code-input {
