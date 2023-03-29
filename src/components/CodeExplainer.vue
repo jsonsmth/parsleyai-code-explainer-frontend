@@ -1,7 +1,7 @@
 <template>
   <div class="code-explainer">
     <header>
-      <img src="/logo.svg" alt="Logo" class="logo" />
+      <img src="/parsley-svgrepo-com.svg" alt="Logo" class="logo" />
       <h1>Parsley Codesplainer</h1>
     </header>
     <div class="code-input">
