@@ -27,7 +27,7 @@
       <h2>Explanation:</h2>
       <textarea readonly ref="explanationArea" class="explanation-textarea" v-model="explanation"></textarea>
     </div>
-    <div v-if="rateLimit.remainingRequests && rateLimit.remainingTokens" class="rate-limit">
+    <div v-if="isNonProduction && rateLimit.remainingRequestsMsg && rateLimit.remainingTokensMsg" class="rate-limit">
       <p>{{ rateLimit.remainingRequestsMsg }}</p>
       <p>{{ rateLimit.remainingTokensMsg }}</p>
     </div>
@@ -53,6 +53,11 @@ export default {
       },
       loading: false,
     };
+  },
+  computed: {
+    isNonProduction() {
+      return process.env.NODE_ENV !== 'production';
+    },
   },
   methods: {
     async submitCode() {
